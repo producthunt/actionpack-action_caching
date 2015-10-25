@@ -162,7 +162,7 @@ module ActionController
             @cache_path
           end
 
-          cache_path = ActionCachePath.new(controller, path_options || {})
+          cache_path = ActionCachePath.new(controller, path_options || {}, path_options[:format].nil?)
 
           body = controller.read_fragment(cache_path.path, @store_options)
 
